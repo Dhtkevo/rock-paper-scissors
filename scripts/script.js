@@ -9,9 +9,16 @@
 //keep score of comp wins
 //alert/print who has higher score after 5 rounds
 
+const choices = ['rock', 'paper', 'scissors'];
+
 function getUserInput() {
     let userInput = prompt('Rock, Paper, or Scissors?');
     let response = userInput.toLowerCase();
     return response;
 
+}
+
+function getComputerChoice() {
+    let compChoice = choices[Math.floor(Math.random() * 3)];
+    return compChoice;
 }
