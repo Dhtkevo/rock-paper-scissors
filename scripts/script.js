@@ -22,3 +22,16 @@ function getComputerChoice() {
     let compChoice = choices[Math.floor(Math.random() * 3)];
     return compChoice;
 }
+
+function playRound(playerChoice, compChoice) {
+    playerChoice = getUserInput();
+    compChoice = getComputerChoice();
+
+    if (playerChoice === compChoice) {
+        return 'It\'s a tie!';
+    } else if (playerChoice === 'rock' && compChoice === 'scissors' || playerChoice === 'paper' && compChoice === 'rock' || playerChoice === 'scissors' && compChoice === 'paper') {
+        return  `User Wins! ${playerChoice} beats ${compChoice}`;
+    } else {
+        return `Computer Wins! ${compChoice} beats ${playerChoice}`;
+    }
+}
