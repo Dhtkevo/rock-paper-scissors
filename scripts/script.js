@@ -1,37 +1,51 @@
-//get user input (case insensitive)
-//get random computer choice of rock, paper or scissors
-//FUNC play a round of rock, paper, scissors
-//IF player chooses rock, paper, or scissors && computer chooses weaker choice,
-//player wins, return user victory string / ELSE
-//computer wins, return computer victory string
-//FUNC game() play 5 rounds
-//keep score of user wins
-//keep score of comp wins
-//alert/print who has higher score after 5 rounds
-
-const choices = ['rock', 'paper', 'scissors'];
-
-function getUserInput() {
-    let userInput = prompt('Rock, Paper, or Scissors?');
-    let response = userInput.toLowerCase();
-    return response;
-
-}
+let user = 0;
+let computer = 0;
 
 function getComputerChoice() {
-    let compChoice = choices[Math.floor(Math.random() * 3)];
+    const choices = ["rock", "paper", "scissors"];
+    const compChoice = choices[Math.floor(Math.random() * 3)];
     return compChoice;
 }
 
-function playRound(playerChoice, compChoice) {
-    playerChoice = getUserInput();
-    compChoice = getComputerChoice();
+function getUserChoice() {
+    let choice = prompt('Pick either Rock, Paper, or Scissors').toLowerCase();
+    return choice;
+}
 
-    if (playerChoice === compChoice) {
-        return 'It\'s a tie!';
-    } else if (playerChoice === 'rock' && compChoice === 'scissors' || playerChoice === 'paper' && compChoice === 'rock' || playerChoice === 'scissors' && compChoice === 'paper') {
-        return  `User Wins! ${playerChoice} beats ${compChoice}`;
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'scissors' && computerSelection === 'paper') {
+        user++;
+        console.log(`User wins! ${playerSelection} beats ${computerSelection}`);
+        return 'You Win!';
+    } else if (playerSelection === computerSelection) {
+        console.log('It\'s a tie!');
+        return 'Tie!';
     } else {
-        return `Computer Wins! ${compChoice} beats ${playerChoice}`;
+        computer++;
+        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        return 'You Lose!';
     }
+}
+
+function resetScores(){
+    user = 0;
+    computer = 0;
+}
+
+function playGame() {
+   resetScores();
+
+    for (let i = 0; i < 5; i++) {
+        let userPick = getUserChoice();
+        let compPick = getComputerChoice();
+        playRound(userPick, compPick);
+    }
+
+    if (user > computer) {
+        alert('You Won The Series!');
+     } else if (user === computer) {
+         alert('Tied Series!');
+     } else if (computer > user) {
+         alert('CPU Won The Series!');
+     }
 }
