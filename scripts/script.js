@@ -37,8 +37,13 @@ const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
 rock.addEventListener('click', function() {
-    playerClickedChoice = rock.innerText.toLowerCase();
-    playRound(playerClickedChoice, getComputerChoice());
+    playRound(rock.innerText.toLowerCase(), getComputerChoice());
 });
-paper.addEventListener('click', playRound);
-scissors.addEventListener('click', playRound);
+
+paper.addEventListener('click', function () {
+    playRound(paper.innerText.toLowerCase(), getComputerChoice());
+});
+
+scissors.addEventListener('click', function () {
+    playRound(scissors.innerText.toLowerCase(), getComputerChoice());
+});
