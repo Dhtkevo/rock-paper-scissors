@@ -32,6 +32,13 @@ function resetScores(){
     computer = 0;
 }
 
-function playGame() {
-   
-}
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+rock.addEventListener('click', function() {
+    playerClickedChoice = rock.innerText.toLowerCase();
+    playRound(playerClickedChoice, getComputerChoice());
+});
+paper.addEventListener('click', playRound);
+scissors.addEventListener('click', playRound);
