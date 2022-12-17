@@ -33,19 +33,5 @@ function resetScores(){
 }
 
 function playGame() {
-   resetScores();
-
-    for (let i = 0; i < 5; i++) {
-        let userPick = getUserChoice();
-        let compPick = getComputerChoice();
-        playRound(userPick, compPick);
-    }
-
-    if (user > computer) {
-        alert('You Won The Series!');
-     } else if (user === computer) {
-         alert('Tied Series!');
-     } else if (computer > user) {
-         alert('CPU Won The Series!');
-     }
+   
 }
