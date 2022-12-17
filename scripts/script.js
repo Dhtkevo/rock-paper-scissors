@@ -12,10 +12,14 @@ function getUserChoice() {
     return choice;
 }
 
+const outputBar = document.getElementById('output');
+let output = document.createElement('p');
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'scissors' && computerSelection === 'paper') {
         user++;
-        console.log(`User wins! ${playerSelection} beats ${computerSelection}`);
+        output.textContent = `User wins! ${playerSelection} beats ${computerSelection}`;
+        outputBar.appendChild(output);
         return 'You Win!';
     } else if (playerSelection === computerSelection) {
         console.log('It\'s a tie!');

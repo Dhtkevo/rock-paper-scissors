@@ -1,0 +1,31 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#choice-container {
+    display:flex;
+    gap: 42px;
+    margin-top: 60px;
+}
+
+.btn-choice {
+   border-radius: 5px;
+   background-color: antiquewhite;
+   border-color: silver;
+   box-shadow: 2px 5px 6px silver;
+   color: rgb(110, 110, 210);
+   font-size: 30px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
