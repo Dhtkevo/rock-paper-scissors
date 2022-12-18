@@ -22,11 +22,11 @@ function playRound(playerSelection, computerSelection) {
         outputBar.appendChild(output);
         return 'You Win!';
     } else if (playerSelection === computerSelection) {
-        console.log('It\'s a tie!');
+        output.textContent ='It\'s a tie!';
         return 'Tie!';
     } else {
         computer++;
-        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        output.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
         return 'You Lose!';
     }
 }
