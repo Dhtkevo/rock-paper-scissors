@@ -20,6 +20,12 @@ body {
     margin-top: 60px;
 }
 
+.result-message {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .btn-choice {
    border-radius: 5px;
    background-color: antiquewhite;
